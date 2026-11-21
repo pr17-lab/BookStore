@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Components/Header'
 import Footer from '../../Components/Footer'
-import { FaBackward, FaEye } from 'react-icons/fa'
+import { FaBackward, FaCamera, FaEye } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 
 function View() {
+  const [modal, setModal] = useState(false)
   return (
     <>
       <Header />
@@ -23,7 +24,7 @@ function View() {
             <div className='col-span-3'>
               <div className='flex justify-between'>
                 <h3 className='font-bold text-2xl'>Title</h3>
-                <button className='text-gray-400'><FaEye /></button>
+                <button onClick={() => setModal(true)} className='text-gray-400'><FaEye /></button>
               </div>
 
               <h2 className='font-bold text-blue-600'>Author</h2>
@@ -51,19 +52,30 @@ function View() {
         </div>
 
         {/* Modal */}
-        <div className='relative z-10 overflow-y-auto'>
-          <div className='bg-gray-500/50 fixed inset-0'>
-            <div className='fex justify-center items-center min-h-screen'>
-              <div className='bg-white rounded-2xl w-100 md:w-250'>
+        {modal &&
+          <div onClick={() => setModal(false)} className='relative z-10 overflow-y-auto'>
+            <div className='bg-gray-500/50 fixed inset-0'>
+              <div className='flex justify-center items-center min-h-screen'>
+                <div className='bg-white rounded-2xl overflow-hidden w-100 md:w-250'>
 
-                {/* modal title */}
-                <div className='bg-black text-white p-3'>
-                  <h2>Book Images</h2>
+                  {/* modal title */}
+                  <div className='bg-black text-white p-3'>
+                    <h2>Book Images</h2>
+                  </div>
+
+                  {/* Relative */}
+                  <div className='relative p-5'>
+                    <p className='flex items-center text-blue-500 '><FaCamera className='me-3' />Camera clicks  of the books</p>
+                    <div className='flex flex-wrap my-5'>
+                      <img className='md:w-75 w-25 md:me-2 mb-3 md-mt-0' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFNKh6VGq3V0Wo61P9eMEEB5fx6I5lAC1e9jEP2AuDNg&s" alt="viewbook" />
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        }
       </div>
       <Footer />
     </>
