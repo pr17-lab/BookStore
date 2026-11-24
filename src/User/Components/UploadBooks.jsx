@@ -1,4 +1,5 @@
 import React from 'react'
+import { FaPlus } from 'react-icons/fa'
 
 function UploadBooks() {
     return (
@@ -26,6 +27,7 @@ function UploadBooks() {
                         <textarea rows={'5'} type="text" placeholder='Abstarct' className='w-full p-2 bg-white rounded' />
                     </div>
                 </div>
+                
                 {/* second section */}
                 <div className='px-5'>
                     <div className='mb-3'>
@@ -48,7 +50,22 @@ function UploadBooks() {
                             <img width={'150px'} height={'150px'} style={{borderRadius:'50%'}} className='object-sover'  src="https://png.pngtree.com/png-vector/20250415/ourmid/pngtree-icon-upload-clipart-blue-button-vector-file-png-image_15952470.png" alt='upload' />
                         </label>
                     </div>
+
+                    {/*Preview uploaded images */}
+                    <div className='flex justidy-content items-center mb-3'>
+                        <img width={'70px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFNKh6VGq3V0Wo61P9eMEEB5fx6I5lAC1e9jEP2AuDNg&s" alt="bookcard" />
+                        <label htmlFor="bookUpload">
+                            <input type="file" id='bookUpload' hidden />
+                            <FaPlus className='text-2xl ms-3'/>
+                        </label>
+                    </div>
                 </div>
+            </div>
+
+            {/* Reset and add hooks */}
+            <div className='flex justify-end mt-10 px-5 justify-center w-full'>
+                <button className='bg-gray-500 text-white px-3 py-2 rounded hover:text-gray-600'>RESET</button>
+                <button className='bg-gray-500 text-white px-3 py-2 rounded hover:text-gray-600 ms-5'>ADD BOOK DETAILS</button>
             </div>
         </div>
     )

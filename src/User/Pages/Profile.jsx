@@ -4,6 +4,8 @@ import Footer from '../../Components/Footer'
 import { FaCircleCheck } from 'react-icons/fa6'
 import Edit from '../Components/Edit'
 import UploadBooks from '../Components/UploadBooks'
+import UploadStatus from '../Components/UploadStatus'
+import PurchaseHistory from '../Components/PurchaseHistory'
 
 function Profile() {
   const [currentTab,setCurrentTab] = useState(0)
@@ -33,8 +35,8 @@ function Profile() {
       </div>
       <div className='px-25 mb-10'>
         {currentTab === 1 && <div><UploadBooks/></div>}
-        {currentTab === 2 && <div>Upload books status</div>}
-        {currentTab === 3 && <div>Purchase History</div>}
+        {currentTab === 2 && <div><UploadStatus/></div>}
+        {currentTab === 3 && <div><PurchaseHistory/></div>}
       </div>
       <Footer />
     </>
