@@ -13,7 +13,7 @@ function Header() {
       <div className='grid grid-cols-3'>
 
         {/* Logo */}
-        <div className='fix items-center'>
+        <div className='flex items-center'>
           <img width={'50px'} height={'50px'} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn0f_yoYOaW9-i7OabFWsnIOKOubu4HcfD1MisABWjQ0oCEmVBND_7JP4&s=10" alt="logo" />
           <h1 className='text-2xl ms-3 font-bold md:hidden'>Bookstore</h1>
         </div>
